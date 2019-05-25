@@ -248,7 +248,9 @@ class BundleReport
       rails_gems.include?(name)
     end
 
-    private def rails_gems
+    private
+
+    def rails_gems
       [
         "rails",
         "activemodel",

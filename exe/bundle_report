@@ -185,7 +185,7 @@ class BundleReport
     end
 
     def age
-      "#{time_ago_in_words(created_at)} ago"
+      "#{created_at.ago_in_words} ago"
     end
 
     def sourced_from_git?

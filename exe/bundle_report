@@ -5,6 +5,7 @@
 #
 at_exit do
   require "optparse"
+  require "time_ago_in_words"
 
   options = {}
   option_parser = OptionParser.new do |opts|
@@ -138,8 +139,6 @@ class BundleReport
   end
 
   class GemInfo
-    include ActionView::Helpers::DateHelper
-
     class NullGemInfo < GemInfo
       def initialize; end
 

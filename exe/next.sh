@@ -33,10 +33,11 @@ MESSAGE
   exit $?
 fi
 
+export BUNDLE_GEMFILE=Gemfile.next BUNDLE_CACHE_PATH=vendor/cache.next
 if [[ "${@}" =~ ^bundle ]]; then
-  BUNDLE_GEMFILE=Gemfile.next BUNDLE_CACHE_PATH=vendor/cache.next $@
+  $@
 else
-  BUNDLE_GEMFILE=Gemfile.next BUNDLE_CACHE_PATH=vendor/cache.next bundle exec $@
+  bundle exec $@
 fi
 
 COMMAND_EXIT=$?
